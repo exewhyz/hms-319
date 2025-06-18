@@ -2,26 +2,6 @@ import React from 'react'
 
 export default function Prescriptions() {
 
-    const appointments = [
-        {
-            id: 1,
-            doctor: "Dr. Anushka",
-            date: "2025-05-20",
-            time: "10:34 AM"
-        },
-        {
-            id: 2,
-            doctor: "Dr. Tarasha",
-            date: "2025-06-20",
-            time: "10:34 AM"
-        },
-        {
-            id: 3,
-            doctor: "Dr. Anshuman",
-            date: "2025-07-20",
-            time: "01:40 PM"
-        }
-    ];
     const prescriptions = [
         {
             id: 1,
