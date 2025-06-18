@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 export default function Register() {
-  const handleSubmit = (element) => {
+  const handleSubmit = (e) => {
     e.oreventDefault()
   }
   return (
