@@ -7,7 +7,7 @@ export default function Register() {
   }
   return (
     <div className='flex items-center justify-center h-full'>
-      <form onSubmit={handleSubmit} className='flex flex-col bg-green-100/50 p-8 rounded-xl gap-4'>
+      <form onSubmit={handleSubmit} className='flex flex-col bg-green-100/50 p-8 rounded-xl gap-4 w-90'>
         <input type="text" placeholder='name' className='border border-black/25 py-1 px-2 rounded' required />
         <input type="email" placeholder='email' className='border border-black/25 py-1 px-2 rounded' required />
         <input type="number" placeholder='age' className='border border-black/25 py-1 px-2 rounded' required />
