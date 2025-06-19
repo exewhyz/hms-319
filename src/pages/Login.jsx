@@ -7,14 +7,12 @@ export default function Login() {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
 
-  const { isAuthenticated, user, loading, error, login } = useAuth();
+  const { isAuthenticated, loading, error, login } = useAuth();
 
 
   useEffect(() => {
     if (isAuthenticated) redirect("/");
   }, [])
-
-
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -42,7 +40,13 @@ export default function Login() {
           placeholder='password'
           className='border border-black/25 py-1 px-2 rounded' required
         />
-        <button type='submit' className='bg-blue-500 px-2 py-1 rounded'>Login</button>
+        <button
+          disabled={loading}
+          type='submit'
+          className='bg-blue-500 px-2 py-1 rounded'
+        >
+          {loading ? "Logging In" : "Login"}
+        </button>
         <Link to={"/register"} className='text-xs text-gray-400'>Not have an Account, Register!</Link>
       </form>
     </div>
