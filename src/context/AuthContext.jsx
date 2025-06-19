@@ -2,8 +2,12 @@ import { useState, createContext, useContext } from "react";
 
 const AuthContext = createContext();
 
+const getUserFromLocal = () => {
+    return JSON.parse(localStorage.getItem("user")) ?? null;
+}
+
 export const AuthProvider = ({ children }) => {
-    const [user, setUser] = useState(null);
+    const [user, setUser] = useState(getUserFromLocal);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
 
@@ -20,7 +24,7 @@ export const AuthProvider = ({ children }) => {
                 mobile: 9876543210
             }
             setUser(mockUser);
-            localStorage.setItem("user", mockUser);
+            localStorage.setItem("user", JSON.stringify(mockUser));
         } catch (error) {
             setError("Login Failed: " + error.message);
             throw new Error("Login Failed: ", error)
@@ -39,7 +43,7 @@ export const AuthProvider = ({ children }) => {
             }
             delete mockUser.password;
             setUser(mockUser);
-            localStorage.setItem("user", mockUser);
+            localStorage.setItem("user", JSON.stringify(mockUser));
         } catch (error) {
             setError("Registration failed: " + error.message);
             throw new Error("Registration Failed: ", error)
@@ -53,8 +57,11 @@ export const AuthProvider = ({ children }) => {
         localStorage.removeItem("user");
     }
 
+    const isAuthenticated = !!user
+    console.log(isAuthenticated)
+
     return (
-        <AuthContext.Provider value={{ user, login, register, logout, loading, error }}>
+        <AuthContext.Provider value={{ isAuthenticated, user, login, register, logout, loading, error }}>
             {children}
         </AuthContext.Provider>
     )
