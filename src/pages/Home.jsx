@@ -11,7 +11,7 @@ const Home = () => {
         <div className="flex flex-col h-full gap-8">
             <section>
                 <h1 className="font-bold text-4xl">Upcomming Appointments</h1>
-                <div className="flex gap-4 mt-8">
+                <div className="flex flex-wrap gap-4 mt-8">
                     {
                         upcommingAppointments.map((appt) => {
                             return (
@@ -29,7 +29,7 @@ const Home = () => {
             </section>
             <section>
                 <h1 className="font-bold text-4xl">Past Appointments</h1>
-                <div className="flex gap-4 mt-8">
+                <div className="flex flex-wrap gap-4 mt-8">
                     {
                         pastAppointments.map((appt) => {
                             return (

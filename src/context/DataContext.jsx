@@ -47,10 +47,11 @@ export const DataProvider = ({ children }) => {
     const [dataError, setDataError] = useState(null);
     const [dataLoading, setDataLoading] = useState(false);
 
-    const addAppointemnts = (appt) => {
+    const addAppointment = (appt) => {
         try {
             setDataLoading(true);
             setDataError(null);
+
             //api call with appt obj
             const newAppt = {
                 id: Date.now(),
@@ -70,7 +71,7 @@ export const DataProvider = ({ children }) => {
     }
 
     return (
-        <DataContext.Provider value={{ appointments, prescriptions, dataError, dataLoading, addAppointemnts }}>
+        <DataContext.Provider value={{ appointments, prescriptions, dataError, dataLoading, addAppointment }}>
             {children}
         </DataContext.Provider>
     )
