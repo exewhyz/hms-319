@@ -12,7 +12,7 @@ export default function Login() {
 
   useEffect(() => {
     if (isAuthenticated) redirect("/");
-  }, [])
+  }, [isAuthenticated])
 
   const handleSubmit = async (e) => {
     e.preventDefault();

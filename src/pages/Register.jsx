@@ -34,7 +34,7 @@ export default function Register() {
 
   useEffect(() => {
     if (isAuthenticated) redirect("/")
-  }, [])
+  }, [isAuthenticated])
   return (
     <div className='flex items-center justify-center h-full'>
       <form onSubmit={handleSubmit} className='flex flex-col bg-green-100/50 p-8 rounded-xl gap-4 w-90'>

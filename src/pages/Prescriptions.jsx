@@ -1,25 +1,9 @@
 import React from 'react'
+import { useData } from '../context/DataContext'
 
 export default function Prescriptions() {
 
-    const prescriptions = [
-        {
-            id: 1,
-            doctor: "Dr. Anushka",
-            details: "jhefhwokfp"
-        },
-        {
-            id: 2,
-            doctor: "Dr. Tarasha",
-            details: "jhefhwokfp"
-        },
-        {
-            id: 3,
-            doctor: "Dr. Anshuman",
-            details: "jhefhwokfp"
-        }
-    ];
-
+    const { prescriptions } = useData();
 
     return (
         <div className='flex flex-col gap-8'>
